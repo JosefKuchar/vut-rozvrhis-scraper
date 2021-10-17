@@ -1,6 +1,6 @@
-# 📅 VUT Rozvrhy IS parser
+# 📅 VUT Rozvrhy IS Scraper
 
-Parser for VUT Rozvrhy IS - https://minerva3.fit.vutbr.cz/rozvrhis/
+Scraper for VUT Rozvrhy IS - https://minerva3.fit.vutbr.cz/rozvrhis/
 
 Generates iCalendar file (Google calendar, macOS calendar, ...)
 
