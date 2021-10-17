@@ -2,7 +2,9 @@
 
 Parser for VUT Rozvrhy IS - https://minerva3.fit.vutbr.cz/rozvrhis/
 
-Generates iCalendar file
+Generates iCalendar file (Google calendar, macOS calendar, ...)
+
+Pre-converted iCalendar files are in `dist` directory
 
 ## Instalation
 
