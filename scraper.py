@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Josef Kuchař - josefkuchar.com
-# Usage: ./parser.py URL OUT_FILE
-# E.g.:  ./parser.py https://minerva3.fit.vutbr.cz/rozvrhis/ZS2021/zkousky/1BIT calendar.ics
+# Usage: ./scraper.py URL OUT_FILE
+# E.g.:  ./scraper.py https://minerva3.fit.vutbr.cz/rozvrhis/ZS2021/zkousky/1BIT calendar.ics
 
 import pandas as pd
 import uuid
@@ -15,7 +15,7 @@ import sys
 def generate_calendar(table):
     cal = Calendar()
     cal.add('version', '2.0')
-    cal.add('prodid', '//JosefKuchar/vut-rozvrhis-parser//NONSGML v1.0//EN')
+    cal.add('prodid', '//JosefKuchar/vut-rozvrhis-scraper//NONSGML v1.0//EN')
 
     for index, row in table.iterrows():
         name = row[0].split(',')
@@ -58,7 +58,7 @@ def preprocess(data):
 
 if __name__ == "__main__":
     # Setup argument parser
-    parser = argparse.ArgumentParser(description='VUT Rozvrhy IS parser')
+    parser = argparse.ArgumentParser(description='VUT Rozvrhy IS Scraper')
     parser.add_argument('url', metavar='URL', type=str,
                         help='Url, e.g.: https://minerva3.fit.vutbr.cz/rozvrhis/ZS2021/zkousky/1BIT')
     parser.add_argument('out', metavar='OUT_FILE', type=str,

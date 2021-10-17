@@ -13,9 +13,9 @@ Pre-converted iCalendar files are in `dist` directory
 ## Usage
 
 ```
-usage: parser.py [-h] URL OUT_FILE
+usage: scraper.py [-h] URL OUT_FILE
 
-VUT Rozvrhy IS parser
+VUT Rozvrhy IS Scraper
 
 positional arguments:
   URL         Url, e.g.: https://minerva3.fit.vutbr.cz/rozvrhis/ZS2021/zkousky/1BIT
