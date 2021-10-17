@@ -24,23 +24,26 @@ def generate_calendar(table):
             datetime_ranges = row[i].split(';')
 
             for datetime_range in datetime_ranges:
-                parts = datetime_range.split(',')
-                startend = parts[1].split(' - ')
-                start = parts[0] + ' ' + startend[0]
-                end = parts[0] + ' ' + startend[1]
+                try:
+                    parts = datetime_range.split(',')
+                    startend = parts[1].split(' - ')
+                    start = parts[0] + ' ' + startend[0]
+                    end = parts[0] + ' ' + startend[1]
 
-                DATE_FORMAT = "%d. %m. %Y %H:%M"
+                    DATE_FORMAT = "%d. %m. %Y %H:%M"
 
-                event = Event()
-                event.add('uid', uuid.uuid1())
-                event.add('dtstamp', vDatetime(datetime.now()))
-                event.add('dtstart', vDatetime(
-                    datetime.strptime(start, DATE_FORMAT)))
-                event.add('dtend', vDatetime(
-                    datetime.strptime(end, DATE_FORMAT)))
-                event.add(
-                    'summary', '{} - {}'.format(name[0], table.columns.values[i]))
-                cal.add_component(event)
+                    event = Event()
+                    event.add('uid', uuid.uuid1())
+                    event.add('dtstamp', vDatetime(datetime.now()))
+                    event.add('dtstart', vDatetime(
+                        datetime.strptime(start, DATE_FORMAT)))
+                    event.add('dtend', vDatetime(
+                        datetime.strptime(end, DATE_FORMAT)))
+                    event.add(
+                        'summary', '{} - {}'.format(name[0], table.columns.values[i]))
+                    cal.add_component(event)
+                except:
+                    print("Can't get start and and datetime, skipping...")
     return cal
 
 
